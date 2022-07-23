@@ -34,7 +34,7 @@ export default function TextForm(props) {
         <h3>Your text summarry:</h3>
         <p>{
             document.getElementById('myBox') === null? 0:
-            text.trim() === ''? 0:text.trimStart().split(/[ ]+/).length} words and {text.length} characters are used.
+            text.trim() === ''? 0:text.trim().split(/[ ]+/).length} words and {text.length} characters are used.
         </p>
         <p>It's approx {.008 * text.trim().split('').length} min reads.</p>
     </div>
