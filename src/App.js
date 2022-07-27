@@ -36,13 +36,23 @@ function App() {
       showAlert('Light mode has been enabled', 'success');
     }
   }
+  const removeBodyClasses= () =>{
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-warning')
+  }
+  const toggleTheme = (clas) =>{
+      removeBodyClasses();
+      document.body.classList.add('bg-'+clas)
+  }
   return (
     <>
-    <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
+    <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} toggleTheme={toggleTheme}/>
     <Alert alert={alert}/>
     <div className="container my-3">               
           {/* <About/> */}
-          <TextForm heading="Enter the text to analyze-"/>                                 
+          <TextForm showAlert={showAlert} heading="Enter the text to analyze-"/>                                 
     </div>
 
     {/* <Router>

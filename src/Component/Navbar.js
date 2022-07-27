@@ -15,7 +15,7 @@ export default function Navbar(props) {
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
           {/* <Link className="nav-link active" aria-current="page" to="/">Home</Link> */}
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+          <a className="nav-link" aria-current="page" href="#">Home</a>
         </li>
         {/* <li className="nav-item">
           <a className="nav-link" href="/">Link</a>
@@ -40,6 +40,13 @@ export default function Navbar(props) {
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form> */}
+
+      <div className="d-flex">
+        <div className="bg-primary rounded mx2" onClick={()=>{props.toggleTheme("primary")}} style={{height:'20px', width:'25px'}}></div>&nbsp;
+        <div className="bg-danger rounded mx2" onClick={()=>{props.toggleTheme("danger")}} style={{height:'20px', width:'25px'}}></div>&nbsp;
+        <div className="bg-success rounded mx2" onClick={()=>{props.toggleTheme("success")}} style={{height:'20px', width:'25px'}}></div>&nbsp;
+        <div className="bg-warning rounded mx2" onClick={()=>{props.toggleTheme("warning")}} style={{height:'20px', width:'25px'}}></div>&nbsp;
+      </div>&nbsp;
       <div className={`form-check form-switch text-${otherMode}`}>
         <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
         <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Switch to {otherMode.toUpperCase()} mode</label>
