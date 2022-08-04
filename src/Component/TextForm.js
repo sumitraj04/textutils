@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Alert from './Alert';
 
 export default function TextForm(props) {
 
